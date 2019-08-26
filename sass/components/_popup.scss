@@ -1,0 +1,208 @@
+.popup {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color-black, .8);
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &__content {
+        width: 72.5%;
+        height: 50rem;
+        background-color: $color-grey-light-3;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        border-radius: 3px;
+        @include posToCenter;
+        display: table;
+        // for not overlaping by the images
+        overflow: hidden;
+
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.2);
+        transition: all .5s .2s;
+        backface-visibility: hidden;
+
+
+        @include respond(tab-land) {
+            width: 90%;
+            height: 62rem;
+            display: inline-block;
+        }
+
+        @include respond(tab-port) {
+            width: 90%;
+            height: 60rem;
+            display: inline-block;
+        }
+
+        // @include respond(phone) {
+        //     width: 90%;
+        //     height: 50rem;
+        // }
+    }
+
+
+    &__left {
+        width: 29%;
+        display: table-cell;
+
+
+        @include respond(tab-port) {
+            width: 0;
+            display: none;
+        }
+
+        //  @include respond(phone) {
+        //  display: none;
+        //  width: 0;
+        //  }
+    }
+
+    &__right {
+        display: table-cell;
+        vertical-align: middle;
+        width: 71%;
+        padding: 3rem 7rem 3rem 1rem;
+
+        @include respond(tab-land) {
+            margin-top: 10%;
+        }
+
+        @include respond(tab-port) {
+            width: 100%;
+            margin-top: 9%;
+            padding: 5rem 6rem 3rem 6rem;
+            display: inline-block;
+        }
+
+        @include respond(phone) {
+            padding: 3rem 3rem;
+            margin-top: 0rem;
+            display: inline-block;
+            width: 100%;
+
+        }
+
+        @media (max-width: 415px) {
+            margin-top: 1.8rem;
+        }
+
+        @media (max-width: 360px) {
+            margin-top: .5rem;
+        }
+
+        @media (max-width: 320px) {
+            padding: 2.2rem 2.2rem;
+            margin-top: -.5rem;
+        }
+
+    }
+
+    &__img {
+        display: block;
+        width: 80%;
+        height: 32rem;
+
+        @include respond(tab-port) {
+            width: 0;
+            display: none;
+        }
+
+        // @include respond(phone) {
+        //       display: none;
+        //       width: 0;
+        //   }
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        margin-bottom: 4rem;
+        color: $color-grey-dark-6;
+
+        -moz-column-count: 2;
+        -moz-column-gap: 4rem;
+        -moz-column-rule: 1px solid rgba($color-grey-dark-6, .3);
+
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid rgba($color-grey-dark-6, .3);
+
+        // hyphens: manual;
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto; // ?? It doesn't work
+
+
+        @include respond(tab-port) {
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+        }
+
+        @include respond(phone) {
+            font-size: 1.4rem;
+            margin-bottom: 4rem;
+            -moz-column-count: 1;
+            -moz-column-gap: 0;
+            -moz-column-rule: none;
+
+            column-count: 1;
+            column-gap: 0;
+            column-rule: none;
+
+        }
+
+        @media (max-width: 414px) {
+            font-size: 1.35rem;
+            margin-bottom: 3rem;
+            -moz-column-count: 1;
+            -moz-column-gap: 0;
+            -moz-column-rule: none;
+
+            column-count: 1;
+            column-gap: 0;
+            column-rule: none;
+        }
+    }
+
+
+    // OPEN STATES
+
+
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &__close {
+
+        &:link,
+        &:visited {
+            color: $color-grey-dark-6;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+            line-height: 1;
+        }
+
+        &:hover {
+            color: $color-secondary;
+
+        }
+    }
+
+}

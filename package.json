@@ -1,0 +1,17 @@
+{
+  "name": "advancs",
+  "version": "1.0.0",
+  "description": "Landing page for advancs",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.6.1",
+    "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.2"
+  }
+}

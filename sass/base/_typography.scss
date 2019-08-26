@@ -1,0 +1,140 @@
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: $default-font-size;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    background-color: $color-tertiary-dark;
+}
+
+
+.heading-primary {
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main {
+        // color: $color-tertiary;
+        color: $color-grey-light-2;
+        display: block;
+        font-size: 6rem;
+        font-weight: 600;
+        letter-spacing: 3.5rem;
+        opacity: 0;
+        animation: moveInLeft 1.2s ease-out forwards;
+
+
+        @include respond(tab-port) {
+            letter-spacing: 2.5rem;
+            font-size: 4.5rem;
+
+        }
+
+        @include respond(phone) {
+            letter-spacing: 1rem;
+            font-size: 4rem;
+
+        }
+
+        //         @include respond(phone) {
+        //             letter-spacing: 1rem;
+        //             font-size: 5rem;
+        //         }
+    }
+
+    &--sub {
+        color: $color-grey-light-2;
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;
+        opacity: 0;
+        animation: moveInRight 1.2s ease-out forwards;
+
+
+        @include respond(tab-port) {
+            letter-spacing: .99rem;
+
+        }
+
+        @include respond(phone) {
+            letter-spacing: .4rem;
+            font-size: 1.8rem;
+
+        }
+
+        // @include respond(phone) {
+        //     letter-spacing: .6rem;
+        //     font-size: 1.8rem;
+        // }
+    }
+}
+
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, rgba($color-primary, 0.8), rgba($color-secondary, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}
+
+
+.heading-secondary-popup {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right, rgba($color-primary-dark, 0.8), rgba($color-secondary, 0.8));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 2px;
+    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
+}
+
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    color: $color-grey-light-2;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.heading-tertiary-popup {
+    font-size: $default-font-size;
+    color: $color-grey-dark-5;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+    color: $color-grey-dark-2;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
